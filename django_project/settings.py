@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e326i*@r2+oh+d)aporb1yx$ix(bx!58wz^p@5^#-)e7nd$tmi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eae45b58bdb344f3a4169a19ee610d80.vfs.cloud9.eu-west-1.amazonaws.com']
 
 
 # Application definition
@@ -138,3 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://eae45b58bdb344f3a4169a19ee610d80.vfs.cloud9.eu-west-1.amazonaws.com/',
+]
