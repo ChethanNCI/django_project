@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e326i*@r2+oh+d)aporb1yx$ix(bx!58wz^p@5^#-)e7nd$tmi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3962de3d7176463582dd30c910b16af3.vfs.cloud9.eu-west-1.amazonaws.com','x123456789jobportal-env.eba-udiuhmpe.eu-west-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['3962de3d7176463582dd30c910b16af3.vfs.cloud9.eu-west-1.amazonaws.com','x123456789jobportal-env.eba-3cssn4ck.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -141,5 +141,6 @@ AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://3962de3d7176463582dd30c910b16af3.vfs.cloud9.eu-west-1.amazonaws.com',
-    'http://x123456789jobportal-env.eba-udiuhmpe.eu-west-1.elasticbeanstalk.com/'
+    'http://x123456789jobportal-env.eba-udiuhmpe.eu-west-1.elasticbeanstalk.com/',
+    'http://x123456789jobportal-env.eba-3cssn4ck.us-east-1.elasticbeanstalk.com/',
 ]
