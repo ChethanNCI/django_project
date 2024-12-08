@@ -3,9 +3,13 @@ from django.contrib import messages
 from .models import Company
 from .form import UpdateCompanyForm
 from users.models import User 
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_http_methods
 
 
 # update company 
+@login_required
+@require_http_methods(["GET", "POST"])
 def update_company(request):
     if request.user.is_recruiter:
         company = Company.objects.get(user=request.user)
