@@ -5,12 +5,20 @@ from .form import UpdateCompanyForm
 from users.models import User 
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
+from django.shortcuts import render, redirect, get_object_or_404
 
 
 # update company 
 @login_required
 @require_http_methods(["GET", "POST"])
 def update_company(request):
+    if not request.user.is_recruiter:
+        messages.error(request, "You do not have permission to update company details.")
+        return redirect('dashboard')
+
+    # Safely fetch the company object linked to the user
+    company = get_object_or_404(Company, user=request.user)
+    
     if request.user.is_recruiter:
         company = Company.objects.get(user=request.user)
         if request.method == 'POST':
