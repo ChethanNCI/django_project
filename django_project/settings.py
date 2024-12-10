@@ -31,7 +31,7 @@ SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['3962de3d7176463582dd30c910b16af3.vfs.cloud9.eu-west-1.amazonaws.com','x123456789jobportal-env.eba-3cssn4ck.us-east-1.elasticbeanstalk.com']
 
