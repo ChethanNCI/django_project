@@ -1,13 +1,15 @@
+'''views.py file of users app'''
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout 
-from .models import User 
-from .form import RegisterUserForm
+from django.contrib.auth import authenticate, login, logout
 from resume.models import Resume
 from company.models import Company
+from .models import User
+from .form import RegisterUserForm
 
 
-# register applicant only 
+
+# register applicant only
 def register_applicant(request):
     if request.method == 'POST':
         form = RegisterUserForm(request.POST)
@@ -29,7 +31,7 @@ def register_applicant(request):
 
 
 
-# register recruiter only 
+# register recruiter only
 def register_recruiter(request):
     if request.method == 'POST':
         form = RegisterUserForm(request.POST)
@@ -51,12 +53,11 @@ def register_recruiter(request):
 
 
 
-# login a user 
+# login a user
 def login_user(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
         user = authenticate(request, username=email, password=password)
         if user is not None and user.is_active:
             login(request, user)

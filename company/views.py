@@ -36,4 +36,3 @@ def company_details(request, pk):
     company = Company.objects.get(pk=pk)
     context = {'company':company}
     return render(request, 'company/company_details.html', context)
-
