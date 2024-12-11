@@ -1,8 +1,9 @@
+'''This will render all the required packages'''
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Company
 from .form import UpdateCompanyForm
-from users.models import User 
+from users.models import User
 from django.contrib.auth.decorators import login_required
 
 
@@ -30,7 +31,7 @@ def update_company(request):
         messages.warning(request, 'Permission denied')
         return redirect('dashboard')
 
-# view company details 
+# view company details
 def company_details(request, pk):
     company = Company.objects.get(pk=pk)
     context = {'company':company}
